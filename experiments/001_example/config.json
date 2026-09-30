@@ -1,0 +1,10 @@
+{
+  "seed": 7,
+  "sizes": [100, 1000, 5000],
+  "query_count": 1000,
+  "warmup": 2,
+  "repetitions": 5,
+  "output_dir": "experiments/001_example/results/default",
+  "figure_path": "experiments/001_example/results/default/speedup.png",
+  "plot": {"figsize": [5, 3], "dpi": 160}
+}
