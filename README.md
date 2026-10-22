@@ -1,28 +1,47 @@
 # 科研项目模板
 
-从探究、实现、实验到论文的一套轻量工作流程。先读 [流程说明](docs/workflow.md)，
-再参照 [完整实验示例](experiments/001_example/README.md) 开始工作。
+给 Agent 一个宏观目标和约束，让它持续发现问题、追查原因、最小验证方法。
+您按需查看 [探究目录](AI-discover/README.md) 中的问题与方法记录，再给出审阅意见。
+完整执行规则见 [工作流程](docs/workflow.md)。
 
-复制本目录到新项目位置，在新项目根目录运行：
+本文件及各级 AGENTS.md、README.md 是稳定说明，日常探索不更新。
+Agent 从实际代码、研究记录与运行证据判断进度，不依赖顶层进度表。
 
-```bash
+复制模板到新目录时不要复制 `.git/`、`.venv/` 和已有运行产物。
+在新目录初始化仓库，将目标与约束填入 [profile](context/profile.md)，也可以直接告诉 Agent，
+由它按您的明确输入初始化。未指定项保持未知，无需先选方法或规划论文。
+
+```powershell
 git init
-mkdir -p discover src paper/tex archive
 uv sync
 git add .
 git commit -m "Initialize research project"
-uv run python experiments/001_example/run.py --config experiments/001_example/config.json
-uv run python experiments/001_example/plot.py --config experiments/001_example/config.json
 ```
 
-目录用途：
+可直接使用以下启动指令：
+
+> 宏观目标：〔希望理解或改善什么〕。
+>
+> 硬约束：〔必须满足、不能改什么〕；允许调整：〔开放范围〕。
+>
+> 环境与资源：〔已知资产及费用、时间边界，未知可留空〕。
+>
+> 请按本仓库流程开始自主探究。先自行检查已有实现和证据，判断做到哪里，再持续推进。
+> 单次执行以约 10 分钟为参考，自行安排检查和后续任务，不按十分钟周期请求确认。
+> 保留问题、方法、代价、反证与未知；我查看探究目录后给出审阅意见。
 
 ```text
-discover/       临时探究，编号递增，Git 忽略
-src/            核心实现，初始为空
-experiments/    每个目录一个独立实验，包含配置、脚本、结果和图
-paper/          exp_design.md 逐项记录实验；plan.md 统一论文计划；tex/ 存放正文
-docs/           用户流程说明
-archive/        失效内容移到这里，Git 忽略
+context/                     用户目标、边界、偏好与交付约定
+AI-discover/
+  README.md                  稳定的目录说明
+  <编号_主题>/research.md     问题设计、证据判断和反馈
+  <编号_主题>/runs/           每次运行的原始证据，单独备份
+src/                         有复用价值的核心实现，按需建立
+experiments/                 经选定的正式论文实验；001_example 仅教学
+paper/                       正式实验设计与摘要、论文计划和正文
+docs/                        流程及按需添加的环境/架构说明
 ```
 
+研究记录、脚本与配置进 Git；原始运行、大型数据和凭据按规则另存。
+探索阶段无需填写论文文件。[完整实验示例](experiments/001_example/README.md) 可按需运行，
+仅用于学习配置、记录与续跑，不代表新项目已取得研究结果。

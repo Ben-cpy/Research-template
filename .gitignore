@@ -2,8 +2,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
-/discover/
-/archive/
+**/runs/
 **/results/
 **/figures/
 *.egg-info/
