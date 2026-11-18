@@ -1,0 +1,8 @@
+phase = "discovery"
+
+allowed_root_entries = [
+    ".agents", ".codex", ".github", ".gitignore", ".lint",
+    "AGENTS.md", "AI-discover", "README.md", "context", "docs",
+    "experiments", "paper", "pyproject.toml", "task-doing.md",
+    "task-done.md", "uv.lock",
+]

@@ -10,8 +10,10 @@
   runs/<run-id>/  冻结配置、源码身份、原始日志、检查点与结果
 ```
 
-新问题按递增编号建立目录，不重排已有编号；000_example 只教结构。
-可参照 [研究记录模板](000_example/research.md)，不要求每项探究都新增 README。
+新问题按三位数字递增建立目录，使用 `NNN_主题` 格式。已有编号固定，退役编号不再使用；
+`000_example` 是教学目录，也是保留独立 README 的例外。
+每项探究都需要 [research.md](000_example/research.md)；按需添加 `scripts/`、`runs/`
+和扩展名为 `.json`、`.toml`、`.yaml` 或 `.yml` 的配置文件。
 
 Agent 接手时自行浏览实际目录、研究记录、业务代码及运行产物，按 [workflow](../docs/workflow.md)
 核验做到了哪里，而不是读取一个预先维护的全局进度表。旧记录和下一步建议只是线索，

@@ -24,7 +24,8 @@ uv run python experiments/001_example/plot.py --config experiments/001_example/c
 可在运行期间中断，再执行原命令观察续跑。
 
 结果解读：CPU 小例子的结果不能推广到 GPU，可根据交叉点判断适用输入规模。
-若用于实际探究，结论写入所属 research.md；正式实验的简短结论维护在 paper/exp_design.md。
+若用于实际探究，结论写入所属 `research.md`；正式实验的设计与简短结论维护在实验目录的
+[`experiment.md`](experiment.md)，进入论文写作阶段后再汇总采用的证据。
 
 学习脚本结构时可复制此目录，替换问题、配置、计算部分和输出路径。新探究放在
 `AI-discover/<编号_主题>/`；确定可复用后再整理进 `src/`。不需要预先建立公共实验框架。

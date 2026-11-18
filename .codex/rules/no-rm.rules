@@ -1,0 +1,7 @@
+prefix_rule(
+    pattern=[["rm", "/bin/rm", "/usr/bin/rm"]],
+    decision="forbidden",
+    justification="用 mv 将待删除内容移入 .lint/trash/，由用户手动清理。",
+    match=["rm example.txt", "/bin/rm example.txt", "/usr/bin/rm example.txt"],
+    not_match=["mv example.txt .lint/trash/"],
+)

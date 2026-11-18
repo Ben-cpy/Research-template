@@ -1,0 +1,20 @@
+name: Repository lint
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check the proposed merge
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python3 .lint/check.py --base "$BASE_SHA"
